@@ -233,7 +233,24 @@ def lang_path(lang, page):
     return LANGS[lang] + page
 
 
+def rel_fix(html, lang, page):
+    """Make asset paths and internal links relative, so pages also work when opened from disk."""
+    here = (LANGS[lang] + page).strip("/")
+    base = "../" * (here.count("/") + 1 if here else 0)
+    html = html.replace('src="/assets/', f'src="{base}assets/').replace('href="/assets/', f'href="{base}assets/')
+    html = html.replace('href="/style.css"', f'href="{base}style.css"')
+    for l in LANGS:
+        for pg in ("posts/", ""):
+            target = (LANGS[l] + pg).strip("/")
+            html = html.replace(f'href="/{target + "/" if target else ""}"', f'href="{base}{target + "/index.html" if target else "index.html"}"')
+    return html
+
+
 def shell(lang, page, title, desc, main, script=""):
+    return rel_fix(_shell(lang, page, title, desc, main, script), lang, page)
+
+
+def _shell(lang, page, title, desc, main, script=""):
     c = CONTENT[lang]
     alt_links = "\n".join(f'<link rel="alternate" hreflang="{l}" href="{SITE}{lang_path(l, page)}">' for l in LANGS)
     switch = "".join(
