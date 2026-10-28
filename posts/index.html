@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts · Georgia Loukatou</title>
+<meta name="description" content="Notes on AI in production, evaluation and adoption, also shared on LinkedIn.">
+<link rel="canonical" href="https://georgialoukatou.github.io/posts/">
+<link rel="alternate" hreflang="en" href="https://georgialoukatou.github.io/posts/">
+<link rel="alternate" hreflang="fr" href="https://georgialoukatou.github.io/fr/posts/">
+<link rel="alternate" hreflang="x-default" href="https://georgialoukatou.github.io/posts/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://georgialoukatou.github.io/posts/">
+<meta property="og:title" content="Posts · Georgia Loukatou">
+<meta property="og:description" content="Notes on AI in production, evaluation and adoption, also shared on LinkedIn.">
+<meta property="og:image" content="https://georgialoukatou.github.io/assets/georgia.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="monogram" href="/" aria-label="Georgia Loukatou, Home">GL</a>
+    <a class="nav-link" href="/posts/" aria-current="page">Posts</a>
+    <div class="lang-switch" aria-label="Language"><a href="/posts/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/fr/posts/" hreflang="fr" lang="fr">FR</a></div>
+    <a class="btn btn-small" href="https://calendly.com/hello-botiqueai/30min" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</nav>
+
+<main id="main" class="posts-page">
+  <header class="posts-head">
+    <div class="wrap">
+      <h1>Posts</h1>
+      <p class="lead">Notes on AI in production, evaluation and adoption, also shared on LinkedIn.</p>
+      <p class="links"><a href="https://www.linkedin.com/in/georgia-loukatou/recent-activity/all/" target="_blank" rel="noopener">Follow me on LinkedIn →</a></p>
+    </div>
+  </header>
+  <div class="wrap posts-list">
+      <article class="post">
+        <time datetime="2025-12-08">8 December 2025</time>
+        <h2>Agent in Production Reality Check: Reliability &gt; Autonomy</h2>
+        <div class="post-body"><p>A new study of 306 practitioners across 26 domains confirms what many of us have experienced: reliability beats autonomy every single time.</p><ol><li><strong>Structure over freestyling.</strong> The most successful agents aren't self-determining their paths. 80% of them use structured, static workflows. In production, success is found in predictable subtasks.</li><li><strong>Reliability is the #1 challenge.</strong> Teams implement massive guardrails, human-written prompts and strict manual control loops over automated, stochastic methods.</li><li><strong>Humans are the benchmark.</strong> Automated evaluation isn't there yet. 74% of teams rely on human-in-the-loop evaluation, because generic benchmarks can't handle domain-specific nuances.</li><li><strong>Quality over latency.</strong> 66% of organizations trade speed for correctness, accepting response times of minutes to ensure the output outperforms human baselines.</li></ol><p>Production-grade agents survive by operating within tight bounds. To make it to production, we often sacrifice open-ended autonomy for the win of predictability.</p></div>
+        <p class="links"><a href="https://lnkd.in/eAM6tTsX" target="_blank" rel="noopener">Paper →</a></p>
+      </article>
+      <article class="post">
+        <time datetime="2025-10-01">1 October 2025</time>
+        <h2>From Chaos to Control: A Two-Phase Playbook for Bulletproof LLM Evaluations</h2>
+        <div class="post-body"><p>Ever pushed a "harmless" prompt change that silently broke your LLM app? Traditional tests fall short for non-deterministic AI, so here is a continuous two-phase strategy to stay in control:</p><ol><li><strong>Pre-launch safety net.</strong> Before shipping, run a curated, high-quality golden dataset through your CI/CD pipeline. This validates the quality of LLM outputs after any change in prompt, settings, or model version. It may combine deterministic checks (like verifying a keyword's presence) and LLM-as-a-Judge evaluations to catch regressions before they ever see a user.</li><li><strong>Watching in the wild.</strong> Once in production, capture user traces and monitor performance through automated evaluations on real-world, recent data, running either continuously or on sampled batches (daily/weekly). Techniques like LLM-as-a-Judge enforce quality and safety at scale, complemented by others like semantic similarity, depending on the product's needs.</li></ol><p>However, the real magic is the feedback loop. What we learn from Phase 2's production data (edge cases, user behaviors, or failure modes) is used to enrich Phase 1's golden dataset. This constant iteration elevates evaluation from a mere task to the engine that drives continuous improvement.</p></div>
+        <p class="links"><a href="https://www.botiqueai.com/" target="_blank" rel="noopener">Full playbook on the BotiqueAI blog →</a></p>
+      </article>
+      <article class="post">
+        <time datetime="2025-09-24">24 September 2025</time>
+        <h2>Why the Future of AI Agents is Small (and Smart)</h2>
+        <div class="post-body"><p>While LLMs get the spotlight, new NVIDIA research argues the future of AI agents is the Small Language Model (SLM). The reason is simple: most agentic tasks are repetitive, narrow, and structured. They don't always require the heavy compute and cost of LLMs.</p><p>Why SLMs are useful for agentic AI:</p><ul><li><strong>Powerful enough.</strong> Modern SLMs (e.g., Hugging Face SmolLM2) match larger models on agent tasks like reasoning and tool calling.</li><li><strong>More economical and faster.</strong> With lower latency and 10-30x cheaper to run, they enable real-time responses with less cloud expenses. Fine-tuning is also dramatically faster.</li><li><strong>Operationally superior.</strong> SLMs are perfect for edge and on-device AI, with better privacy and user control. They ensure easily formatted outputs for reliable tool use.</li></ul><p><strong>Suggested approach.</strong> The path forward isn't about replacing LLMs, but building smarter:</p><ul><li>Build hybrid, heterogeneous architectures: modular agents with a mix of models.</li><li>Fine-tune SLMs when possible for specific, high-volume skills.</li><li>Gradually migrate sub-agents and repetitive tasks from LLMs to SLMs.</li></ul><p><strong>The future is hybrid.</strong> This approach is more than a technical fix. It's a move toward responsible and sustainable AI that unlocks cost savings, broader accessibility, and more scalable systems.</p></div>
+        <p class="links"><a href="https://lnkd.in/e7uKxbWV" target="_blank" rel="noopener">Paper: SLMs for Agentic AI →</a><a href="https://lnkd.in/epsAVGNf" target="_blank" rel="noopener">BotiqueAI blog →</a></p>
+      </article>
+      <article class="post">
+        <time datetime="2025-06-18">18 June 2025</time>
+        <h2>LLMs Get Lost in Conversation, and We're Not Evaluating That Enough</h2>
+        <div class="post-body"><p>A new large-scale study by Microsoft and Salesforce researchers reveals a critical issue some of us have experienced: LLMs perform on average 39% worse in multi-turn conversations compared to single-turn prompts.</p><p><strong>What's going wrong?</strong></p><ul><li>LLMs jump to premature assumptions and cling to flawed prior outputs.</li><li>They rarely recover once off track.</li><li>Lowering temperature, even to zero, doesn't fix it.</li><li>Restarting conversations often works better than continuing them.</li><li>Consolidating instructions into one prompt helps, but that's unrealistic for most users.</li></ul><p>Benchmarks still focus on fully-specified, single-turn tasks. Multi-turn evaluations are rare, often non-reproducible, and don't reflect real-world use. Let's shift the focus toward multi-turn robustness and reproducibility in model development and evaluation.</p></div>
+        <p class="links"><a href="https://lnkd.in/gwRF2q8P" target="_blank" rel="noopener">Paper: LLMs Get Lost in Multi-turn Conversation →</a></p>
+      </article>
+  </div>
+</main>
+
+<section class="cta-section" id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Chat with me</h2>
+      <ul class="chips light"><li>AI Strategy &amp; Advisory</li><li>Custom AI Systems</li><li>Speaking &amp; Workshops</li><li>AI Training &amp; Enablement</li></ul>
+      <p>I help companies navigate AI strategy and build systems that deliver real value. Whether you need hands-on engineering, executive advisory, or a talk that cuts through the hype, let's talk.</p>
+      <div class="cta-row">
+        <a class="btn btn-light" href="https://calendly.com/hello-botiqueai/30min" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn btn-outline-light" href="mailto:georgial@botiqueai.com">Email me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>© <span id="year">2026</span> Georgia Loukatou · Paris, France</p>
+    <p class="links">
+      <a href="mailto:georgial@botiqueai.com">georgial@botiqueai.com</a>
+      <a href="https://www.linkedin.com/in/georgia-loukatou/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.botiqueai.com/" target="_blank" rel="noopener">BotiqueAI</a>
+      <a href="https://scholar.google.com/citations?user=S5Yad6wAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
