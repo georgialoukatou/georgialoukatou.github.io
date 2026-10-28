@@ -60,6 +60,10 @@ POSTS = [
             "Benchmarks still focus on fully-specified, single-turn tasks. Multi-turn evaluations are rare, often non-reproducible, and don't reflect real-world use. Let's shift the focus toward multi-turn robustness and reproducibility in model development and evaluation."],
    "links": [("Paper: LLMs Get Lost in Multi-turn Conversation", "https://lnkd.in/gwRF2q8P")]},
 ]
+MARQUEE = [("thefork.png", "TheFork"), ("acolad.png", "Acolad"), ("qlip-ai.png", "qlip.ai"), ("stanford.png", "Stanford University"),
+           ("ens.png", "ENS Paris"), ("malt.png", "Malt"), ("sup-de-vinci.png", "Sup de Vinci"), ("openclassrooms.png", "OpenClassrooms"),
+           ("botiqueai.png", "BotiqueAI"), ("universit-de-paris.png", "Université Paris Diderot")]
+
 MONTHS = {"en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
           "fr": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]}
 
@@ -87,13 +91,10 @@ CONTENT = {
      "chips": ["Agentic AI", "RAG", "AI Strategy", "Chatbots"],
      "links": [("Watch the Aria demo →", "https://www.youtube.com/watch?v=iWUjmfBZiLE"), ("botiqueai.com", "https://www.botiqueai.com/"),
                ("LinkedIn", "https://www.linkedin.com/company/botique-ai"), ("Instagram", "https://www.instagram.com/botiqueai/")]},
-    {"logo": "thefork.png", "role": "Lead AI Engineer", "org": "TheFork, a Tripadvisor company", "date": "2025 – Present",
-     "body": ["Owned the product vision of <strong>AskTheFork</strong>, an AI-powered restaurant discovery experience that replaces traditional filters with natural-language search. It interprets complex queries by analysing menus, photos and reviews via RAG, and shipped with a <strong>5% higher conversion rate</strong>.",
-              "Led the full architecture (LangGraph, GPT-4o, OpenSearch), built an LLM restaurant classifier across 300 tags and evaluation pipelines (Arize, custom metrics), upskilled engineers on AI, and defined the team's AI roadmap with the Head of AI and Product."],
-     "chips": ["LangGraph", "LLM Evaluation", "Semantic Search"],
-     "links": [("Read the case study →", "https://www.media.thiga.co/en/ai-strategy-why-thefork-ditched-the-chatbot")]},
   ],
   "prev": [
+    ("thefork.png", "Lead AI Engineer · TheFork, a Tripadvisor company", "2025 – 2026",
+     "Owned the product vision of <strong>AskTheFork</strong>, an AI-powered restaurant discovery experience that replaces traditional filters with natural-language search over menus, photos and reviews (RAG), shipped with a <strong>5% higher conversion rate</strong>. Led the architecture (LangGraph, GPT-4o, OpenSearch), built an LLM restaurant classifier across 300 tags and evaluation pipelines (Arize), and defined the team's AI roadmap with the Head of AI and Product. <a href=\"https://www.media.thiga.co/en/ai-strategy-why-thefork-ditched-the-chatbot\" target=\"_blank\" rel=\"noopener\">Read the case study →</a>"),
     ("acolad.png", "AI Engineer · Acolad Group, Paris", "2024 – 2025",
      "European leader in language and content services. Led AI adoption and defined the roadmap with the Head of AI and PM. Shipped agentic RAG translation (LangChain, BentoML, vector search) with a <strong>40% quality improvement</strong> and zero human intervention, an internal AI assistant, and an LLM-as-a-Judge quality validation system."),
     ("qlip-ai.png", "Founding ML Engineer · qlip.ai, Station F", "2022 – 2024",
@@ -119,17 +120,21 @@ CONTENT = {
               "Organized and moderated the NLP and Chatbots round table with M. Baroni, F. Yvon, F. Béchet and others, plus an Industrial Challenges session."),
   "teaching": [
     ("sup-de-vinci.png", "NLP &amp; AI Instructor", "Sup de Vinci, Paris · 2024",
-     "Designed and taught a 35-hour NLP and Generative AI course for Master 2 Data Science students: transformers, LLMs, embeddings, prompt engineering, RAG and conversational AI."),
+     "Designed and taught a 35-hour NLP and Generative AI course for Master 2 Data Science students: transformers, LLMs, embeddings, prompt engineering, RAG and conversational AI, with hands-on case studies such as Amazon review analysis and a RAG-based Q&amp;A system."),
+    ("thefork.png", "AI Upskilling &amp; Mentoring", "TheFork · 2025",
+     "Shared AI expertise with an existing tech team and upskilled engineers on LLMs and agentic AI."),
     ("openclassrooms.png", "Data Science Mentor", "OpenClassrooms · 2022 – 2024",
      "Mentored professionals through Data Science and Machine Learning certification projects and career transitions into AI/ML."),
     ("ens.png", "Teaching Assistant", "CogMaster, ENS Paris · 2019 – 2020",
      "Language Processing &amp; Acquisition, Advanced Master."),
+    ("ens.png", "Workshop Organizer &amp; Research Supervisor", "ENS Paris · 2017 – 2020",
+     "Organized workshops on open-source and programming best practices, and supervised 7 research interns."),
   ],
   "scholar": "Full list on Google Scholar →",
   "beyond": ["Trained in theater and critical thinking for science communication. Communicating AI well matters as much as building it.",
              "Classically trained musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
              "Traveled to 50+ countries, and counting."],
-  "cta_title": "Chat with me",
+  "cta_title": "Chat with me", "marquee": "Where I've worked, taught &amp; spoken",
   "nav_posts": "Posts", "posts_intro": "Notes on AI in production, evaluation and adoption, also shared on LinkedIn.",
   "posts_follow": "Follow me on LinkedIn →", "posts_paper": "Read", "home": "Home",
   "cta_chips": ["AI Strategy &amp; Advisory", "Custom AI Systems", "Speaking &amp; Workshops", "AI Training &amp; Enablement"],
@@ -160,13 +165,10 @@ CONTENT = {
      "chips": ["IA agentique", "RAG", "Stratégie IA", "Chatbots"],
      "links": [("Voir la démo d'Aria →", "https://www.youtube.com/watch?v=iWUjmfBZiLE"), ("botiqueai.com", "https://www.botiqueai.com/"),
                ("LinkedIn", "https://www.linkedin.com/company/botique-ai"), ("Instagram", "https://www.instagram.com/botiqueai/")]},
-    {"logo": "thefork.png", "role": "Lead AI Engineer", "org": "TheFork, une entreprise Tripadvisor", "date": "2025 – aujourd'hui",
-     "body": ["Responsable de la vision produit d'<strong>AskTheFork</strong>, une expérience de découverte de restaurants propulsée par l'IA qui remplace les filtres traditionnels par une recherche en langage naturel. Elle interprète des requêtes complexes en analysant menus, photos et avis via RAG, et a été lancée avec un <strong>taux de conversion supérieur de 5 %</strong>.",
-              "Pilotage de toute l'architecture (LangGraph, GPT-4o, OpenSearch), conception d'un classifieur de restaurants par LLM sur 300 tags et de pipelines d'évaluation (Arize, métriques sur mesure), montée en compétences des ingénieurs sur l'IA et définition de la feuille de route IA de l'équipe avec le Head of AI et le Produit."],
-     "chips": ["LangGraph", "Évaluation de LLM", "Recherche sémantique"],
-     "links": [("Lire l'étude de cas →", "https://www.media.thiga.co/en/ai-strategy-why-thefork-ditched-the-chatbot")]},
   ],
   "prev": [
+    ("thefork.png", "Lead AI Engineer · TheFork, une entreprise Tripadvisor", "2025 – 2026",
+     "Responsable de la vision produit d'<strong>AskTheFork</strong>, une expérience de découverte de restaurants propulsée par l'IA qui remplace les filtres traditionnels par une recherche en langage naturel sur les menus, photos et avis (RAG), lancée avec un <strong>taux de conversion supérieur de 5 %</strong>. Pilotage de l'architecture (LangGraph, GPT-4o, OpenSearch), classifieur de restaurants par LLM sur 300 tags, pipelines d'évaluation (Arize) et feuille de route IA de l'équipe avec le Head of AI et le Produit. <a href=\"https://www.media.thiga.co/en/ai-strategy-why-thefork-ditched-the-chatbot\" target=\"_blank\" rel=\"noopener\">Lire l'étude de cas →</a>"),
     ("acolad.png", "Ingénieure IA · Acolad Group, Paris", "2024 – 2025",
      "Leader européen des services linguistiques et de contenu. Pilotage de l'adoption de l'IA et définition de la feuille de route avec le Head of AI et le PM. Mise en production d'une traduction par RAG agentique (LangChain, BentoML, recherche vectorielle) avec <strong>40 % d'amélioration de la qualité</strong> sans intervention humaine, d'un assistant IA interne et d'un système de validation qualité LLM-as-a-Judge."),
     ("qlip-ai.png", "Founding ML Engineer · qlip.ai, Station F", "2022 – 2024",
@@ -192,17 +194,21 @@ CONTENT = {
               "Organisation et modération de la table ronde TAL et chatbots avec M. Baroni, F. Yvon, F. Béchet et d'autres, ainsi que d'une session sur les défis industriels."),
   "teaching": [
     ("sup-de-vinci.png", "Enseignante en TAL et IA", "Sup de Vinci, Paris · 2024",
-     "Conception et enseignement d'un cours de 35 heures sur le TAL et l'IA générative pour des étudiants de Master 2 Data Science : transformers, LLM, embeddings, prompt engineering, RAG et IA conversationnelle."),
+     "Conception et enseignement d'un cours de 35 heures sur le TAL et l'IA générative pour des étudiants de Master 2 Data Science : transformers, LLM, embeddings, prompt engineering, RAG et IA conversationnelle, avec des cas pratiques comme l'analyse d'avis Amazon et un système de questions-réponses basé sur RAG."),
+    ("thefork.png", "Montée en compétences IA &amp; mentorat", "TheFork · 2025",
+     "Partage d'expertise IA avec l'équipe tech et montée en compétences des ingénieurs sur les LLM et l'IA agentique."),
     ("openclassrooms.png", "Mentore Data Science", "OpenClassrooms · 2022 – 2024",
      "Accompagnement de professionnels dans leurs projets de certification en Data Science et Machine Learning et dans leur reconversion vers l'IA."),
     ("ens.png", "Chargée de TD", "CogMaster, ENS Paris · 2019 – 2020",
      "Traitement et acquisition du langage, master avancé."),
+    ("ens.png", "Organisatrice d'ateliers &amp; encadrante de recherche", "ENS Paris · 2017 – 2020",
+     "Organisation d'ateliers sur l'open source et les bonnes pratiques de programmation, et encadrement de 7 stagiaires de recherche."),
   ],
   "scholar": "Liste complète sur Google Scholar →",
   "beyond": ["Formée au théâtre et à l'esprit critique pour la médiation scientifique. Bien expliquer l'IA compte autant que la construire.",
              "Musicienne de formation classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
              "Plus de 50 pays visités, et ce n'est pas fini."],
-  "cta_title": "Discutons",
+  "cta_title": "Discutons", "marquee": "Là où j'ai travaillé, enseigné et pris la parole",
   "nav_posts": "Posts", "posts_intro": "Notes sur l'IA en production, l'évaluation et l'adoption, également publiées sur LinkedIn (en anglais).",
   "posts_follow": "Me suivre sur LinkedIn →", "posts_paper": "Lire", "home": "Accueil",
   "cta_chips": ["Stratégie &amp; conseil IA", "Systèmes d'IA sur mesure", "Conférences &amp; ateliers", "Formation &amp; acculturation IA"],
@@ -260,6 +266,7 @@ def shell(lang, page, title, desc, main, script=""):
 <a class="skip" href="#main">{c["skip"]}</a>
 
 <nav class="nav" aria-label="Main">
+  <div class="progress" aria-hidden="true"></div>
   <div class="wrap nav-inner">
     <a class="monogram" href="{LANGS[lang]}" aria-label="{c["name"]}, {c["home"]}">GL</a>
     <a class="nav-link" href="{lang_path(lang, "posts/")}"{posts_cur}>{c["nav_posts"]}</a>
@@ -298,12 +305,49 @@ def shell(lang, page, title, desc, main, script=""):
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+{COMMON_SCRIPT}
 {script}
 </script>
 </body>
 </html>
 '''
 
+
+COMMON_SCRIPT = """(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // scroll progress bar
+  var bar = document.querySelector('.progress');
+  function prog() { var h = document.documentElement; var m = h.scrollHeight - h.clientHeight; bar.style.transform = 'scaleX(' + (m > 0 ? h.scrollTop / m : 0) + ')'; }
+  if (bar) { window.addEventListener('scroll', prog, {passive: true}); prog(); }
+  if (reduce || !('IntersectionObserver' in window)) return;
+  // reveal on scroll, staggered within each group
+  var sel = '.block-title, .cards > *, .timeline li, .edu li, .feature, .talks > *, .pubs li, .beyond p, .post, .cta, .posts-head .wrap > *';
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin: '0px 0px -8% 0px'});
+  function arm(root) {
+    root.querySelectorAll(sel).forEach(function (el) {
+      if (el.classList.contains('reveal')) return;
+      var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.classList.add('reveal'); el.style.transitionDelay = Math.min(i, 5) * 70 + 'ms';
+      io.observe(el);
+    });
+  }
+  arm(document);
+  window.armReveal = arm;
+  // count-up for numbers in the stats row
+  document.querySelectorAll('.stats dt').forEach(function (dt) {
+    var m = dt.textContent.match(/^(\\d+)(.*)$/); if (!m) return;
+    var end = +m[1], rest = m[2], t0 = null;
+    var o = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return; o.disconnect();
+      function step(t) { if (!t0) t0 = t; var k = Math.min((t - t0) / 1100, 1); dt.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))) + rest; if (k < 1) requestAnimationFrame(step); }
+      dt.textContent = '0' + rest; requestAnimationFrame(step);
+      setTimeout(function () { dt.textContent = end + rest; }, 1500);
+    });
+    o.observe(dt);
+  });
+})();"""
 
 TAB_SCRIPT = '''(function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
@@ -314,7 +358,7 @@ TAB_SCRIPT = '''(function () {
       var on = t.dataset.tab === id;
       t.setAttribute('aria-selected', on);
       t.tabIndex = on ? 0 : -1;
-      document.getElementById('panel-' + t.dataset.tab).hidden = !on;
+      var pnl = document.getElementById('panel-' + t.dataset.tab); pnl.hidden = !on;
       if (on && focus) t.focus();
     });
   }
@@ -397,6 +441,7 @@ def render_home(lang):
     pc, m, lg = c["podcast"], c["malt"], c["legrain"]
     stats = "".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in c["stats"])
     points = "".join(f"<li>{p}</li>" for p in c["points"])
+    marquee = "".join(f'<span class="logo"><img src="/assets/{f}" alt="" width="28" height="28">{n}</span>' for f, n in MARQUEE)
 
     podcast = f'''<article class="feature">
           <a class="feature-media" href="{SPOTIFY}" {EXT}><img src="/assets/podcast.jpg" alt="{pc["alt"]}" width="1600" height="892" loading="lazy"></a>
@@ -439,6 +484,10 @@ def render_home(lang):
     <div class="hero-photo"><img src="/assets/georgia.jpg" alt="{c["photo_alt"]}" width="300" height="300"></div>
   </div>
   <div class="wrap"><dl class="stats">{stats}</dl></div>
+  <div class="marquee" aria-label="{c["marquee"]}">
+    <p class="marquee-label wrap">{c["marquee"]}</p>
+    <div class="marquee-track"><div class="group">{marquee}</div><div class="group" aria-hidden="true">{marquee}</div></div>
+  </div>
 </header>
 
 <main id="main" class="tabs-area">
@@ -446,7 +495,7 @@ def render_home(lang):
     <div class="wrap"><div class="tabbar" role="tablist">{tabs}</div></div>
   </div>
   <div class="panel" role="tabpanel" id="panel-experience" aria-labelledby="tab-experience">
-    {block(1, h["now"], f'<div class="cards two">{now_cards}</div>')}
+    {block(1, h["now"], f'<div class="cards one">{now_cards}</div>')}
     {block(2, h["prev"], f'<ol class="timeline">{timeline}</ol>')}
     {block(3, h["edu"], f'<ul class="edu">{edu}</ul>')}
   </div>

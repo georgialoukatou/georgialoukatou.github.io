@@ -25,6 +25,7 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav" aria-label="Main">
+  <div class="progress" aria-hidden="true"></div>
   <div class="wrap nav-inner">
     <a class="monogram" href="/" aria-label="Georgia Loukatou, Home">GL</a>
     <a class="nav-link" href="/posts/" aria-current="page">Posts</a>
@@ -97,6 +98,41 @@
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // scroll progress bar
+  var bar = document.querySelector('.progress');
+  function prog() { var h = document.documentElement; var m = h.scrollHeight - h.clientHeight; bar.style.transform = 'scaleX(' + (m > 0 ? h.scrollTop / m : 0) + ')'; }
+  if (bar) { window.addEventListener('scroll', prog, {passive: true}); prog(); }
+  if (reduce || !('IntersectionObserver' in window)) return;
+  // reveal on scroll, staggered within each group
+  var sel = '.block-title, .cards > *, .timeline li, .edu li, .feature, .talks > *, .pubs li, .beyond p, .post, .cta, .posts-head .wrap > *';
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin: '0px 0px -8% 0px'});
+  function arm(root) {
+    root.querySelectorAll(sel).forEach(function (el) {
+      if (el.classList.contains('reveal')) return;
+      var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.classList.add('reveal'); el.style.transitionDelay = Math.min(i, 5) * 70 + 'ms';
+      io.observe(el);
+    });
+  }
+  arm(document);
+  window.armReveal = arm;
+  // count-up for numbers in the stats row
+  document.querySelectorAll('.stats dt').forEach(function (dt) {
+    var m = dt.textContent.match(/^(\d+)(.*)$/); if (!m) return;
+    var end = +m[1], rest = m[2], t0 = null;
+    var o = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return; o.disconnect();
+      function step(t) { if (!t0) t0 = t; var k = Math.min((t - t0) / 1100, 1); dt.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))) + rest; if (k < 1) requestAnimationFrame(step); }
+      dt.textContent = '0' + rest; requestAnimationFrame(step);
+      setTimeout(function () { dt.textContent = end + rest; }, 1500);
+    });
+    o.observe(dt);
+  });
+})();
 
 </script>
 </body>
