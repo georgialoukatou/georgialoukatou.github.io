@@ -293,14 +293,17 @@ strong { font-weight: 600; color: var(--ink); }
 .post-reader { scroll-margin-top: 84px; min-width: 0; }
 .post-reader .post { margin-bottom: 0; }
 .post-reader .post[hidden] { display: none; }
-.post-index { position: sticky; top: 88px; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px 10px 10px; box-shadow: var(--shadow); max-height: calc(100vh - 110px); overflow: auto; }
-.post-index-title { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding: 0 12px 10px; border-bottom: 1px solid var(--rule); margin-bottom: 6px; }
-.post-index ol { list-style: none; }
-.post-index a { display: block; padding: 10px 12px; border-radius: 10px; text-decoration: none; color: var(--ink2); border-left: 3px solid transparent; transition: background .2s, color .2s, border-color .2s; }
-.post-index a:hover { background: var(--band); color: var(--ink); }
-.post-index a[aria-current] { background: var(--band); color: var(--ink); border-left-color: var(--g2); }
-.post-index time { display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
-.post-index span { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.35; }
+.post-index { position: sticky; top: 88px; max-height: calc(100vh - 110px); overflow: auto; padding: 2px 4px 4px 2px; }
+.post-index-title { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.post-index ol { list-style: none; display: grid; gap: 10px; }
+.post-index ol a { display: block; padding: 14px 16px; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; text-decoration: none; color: var(--ink); font-size: 14.5px; font-weight: 600; line-height: 1.35; box-shadow: 0 1px 2px rgba(0,0,0,.04); transition: border-color .2s, transform .15s, box-shadow .2s; }
+.post-index ol a:hover { border-color: var(--ink); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.08); }
+.post-index ol a[aria-current] { border-color: transparent; background: var(--grad); color: #fff; box-shadow: 0 6px 18px color-mix(in srgb, var(--g2) 30%, transparent); }
+.follow-card { display: flex; align-items: center; gap: 14px; margin-top: 14px; padding: 16px; border-radius: 12px; background: #0B0B0C; color: #F2F2F0; text-decoration: none; transition: transform .15s, box-shadow .2s; }
+.follow-card:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.18); }
+.follow-card strong { display: block; font-size: 15px; color: #fff; margin-bottom: 2px; }
+.follow-card span:last-child { font-size: 13.5px; color: #C9C9CE; }
+.follow-icon { width: 40px; height: 40px; flex: none; border-radius: 10px; display: grid; place-items: center; background: #0A66C2; color: #fff; }
 
 /* Responsive */
 @media (max-width: 920px) {

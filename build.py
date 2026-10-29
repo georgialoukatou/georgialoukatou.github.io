@@ -231,7 +231,7 @@ CONTENT = {
              "Classically trained musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
              "Traveled to 50+ countries, and counting."],
   "cta_title": "Chat with me", "marquee": "Organizations",
-  "nav_posts": "Posts", "posts_intro": "Notes on AI adoption, evaluation and regulation, also shared on LinkedIn.", "posts_via": "posted by", "posts_all": "All posts",
+  "nav_posts": "Posts", "posts_intro": "Notes on AI adoption, evaluation and regulation, also shared on LinkedIn.", "posts_via": "posted by", "posts_all": "All posts", "posts_more": "More on LinkedIn",
   "posts_follow": "Follow me on LinkedIn →", "posts_paper": "Read", "home": "Home",
   "cta_chips": ["AI Strategy &amp; Advisory", "Custom AI Systems", "Speaking &amp; Workshops", "AI Training &amp; Enablement"],
   "cta_body": "I help companies navigate AI strategy and build systems that deliver real value. Whether you need hands-on engineering, executive advisory, or a talk that cuts through the hype, let's talk.",
@@ -307,7 +307,7 @@ CONTENT = {
              "Musicienne de formation classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
              "Plus de 50 pays visités, et ce n'est pas fini."],
   "cta_title": "Discutons", "marquee": "Organisations",
-  "nav_posts": "Posts", "posts_intro": "Notes sur l'adoption de l'IA, son évaluation et sa réglementation, également publiées sur LinkedIn (la plupart en anglais).", "posts_via": "publié par", "posts_all": "Tous les posts",
+  "nav_posts": "Posts", "posts_intro": "Notes sur l'adoption de l'IA, son évaluation et sa réglementation, également publiées sur LinkedIn (la plupart en anglais).", "posts_via": "publié par", "posts_all": "Tous les posts", "posts_more": "Plus de posts sur LinkedIn",
   "posts_follow": "Me suivre sur LinkedIn →", "posts_paper": "Lire", "home": "Accueil",
   "cta_chips": ["Stratégie &amp; conseil IA", "Systèmes d'IA sur mesure", "Conférences &amp; ateliers", "Formation &amp; acculturation IA"],
   "cta_body": "J'aide les entreprises à définir leur stratégie IA et à construire des systèmes qui apportent une vraie valeur. Que vous ayez besoin d'ingénierie, de conseil auprès de la direction ou d'une intervention qui va au-delà des effets d'annonce, parlons-en.",
@@ -349,7 +349,7 @@ def rel_fix(html, lang, page):
     here = (LANGS[lang] + page).strip("/")
     base = "../" * (here.count("/") + 1 if here else 0)
     html = html.replace('src="/assets/', f'src="{base}assets/').replace('href="/assets/', f'href="{base}assets/')
-    html = html.replace('href="/style.css"', f'href="{base}style.css"')
+    html = html.replace('href="/style.css?v=', f'href="{base}style.css?v=')
     for l in LANGS:
         for pg in ("posts/", ""):
             target = (LANGS[l] + pg).strip("/")
@@ -388,7 +388,7 @@ def _shell(lang, page, title, desc, main, script=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css?v={CSS_VERSION}">
 </head>
 <body>
 <a class="skip" href="#main">{c["skip"]}</a>
@@ -440,6 +440,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </html>
 '''
 
+
+import hashlib as _hl
+CSS_VERSION = _hl.md5((ROOT / "style.css").read_bytes()).hexdigest()[:8]
 
 COMMON_SCRIPT = """(function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -684,7 +687,7 @@ def render_posts(lang):
       </article>'''
         current = ' aria-current="true"' if i == 0 else ""
         nav += f'''
-        <li><a href="#{pid}" data-post="{pid}"{current}><time>{date_txt}</time><span>{post_label(p)}</span></a></li>'''
+        <li><a href="#{pid}" data-post="{pid}"{current}>{post_label(p)}</a></li>'''
     main = f'''<main id="main" class="posts-page">
   <header class="posts-head">
     <div class="wrap">
@@ -700,6 +703,10 @@ def render_posts(lang):
       <p class="post-index-title">{c["posts_all"]}</p>
       <ol>{nav}
       </ol>
+      <a class="follow-card" href="{LINKEDIN}recent-activity/all/" {EXT}>
+        <span class="follow-icon">{ICONS["linkedin"][1]}</span>
+        <span><strong>{c["posts_more"]}</strong>{c["posts_follow"]}</span>
+      </a>
     </nav>
   </div>
 </main>'''
