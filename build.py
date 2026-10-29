@@ -180,7 +180,7 @@ CONTENT = {
         "teaching": "Selected Courses &amp; Mentoring", "pubs": "Selected Publications", "beyond": "Beyond Work"},
   "now": [
     {"logo": "botiqueai.png", "role": "Co-Founder", "org": "BotiqueAI, Paris", "date": "2025 – Present", "shot": "botiqueai-site.jpg", "badge": "CII-certified",
-     "body": ["An AI consulting studio taking companies from AI strategy to production systems (agents, RAG, chatbots), with 20+ clients across 10+ sectors."],
+     "body": ["An AI consulting studio taking companies from AI strategy to production systems (agents, RAG, chatbots)."],
      "projects_label": "Key projects",
      "projects": [("Boti", "AI assistants for small businesses", "https://www.botiqueai.com/lp/ai-consultancy"),
                   ("Aria", "AI chatbot for Shopify &amp; WordPress stores", "https://www.botiqueai.com/products/aria")],
@@ -190,9 +190,9 @@ CONTENT = {
   ],
   "prev": [
     ("thefork.png", "Lead AI Engineer · TheFork, a Tripadvisor company", "2025 – 2026",
-     "Owned the product vision of <strong>AskTheFork</strong>, an AI-powered restaurant discovery experience that replaces traditional filters with natural-language search over menus, photos and reviews (RAG), shipped with a <strong>5% higher conversion rate</strong>. Led the architecture (LangGraph, GPT-4o, OpenSearch), built an LLM restaurant classifier across 300 tags and evaluation pipelines (Arize), and defined the team's AI roadmap with the Head of AI and Product. <a href=\"https://www.media.thiga.co/en/ai-strategy-why-thefork-ditched-the-chatbot\" target=\"_blank\" rel=\"noopener\">Read the case study →</a>"),
+     "Owned the product vision of <strong>AskTheFork</strong>, an AI-powered restaurant discovery experience that replaces traditional filters with natural-language search, shipped with a <strong>5% higher conversion rate</strong>. Built an LLM restaurant classifier across 300 tags and evaluation pipelines (Arize), and defined the team's AI roadmap with the Head of AI and Product."),
     ("acolad.png", "AI Engineer · Acolad Group, Paris", "2024 – 2025",
-     "European leader in language and content services. Led AI adoption and defined the roadmap with the Head of AI and PM. Shipped agentic RAG translation (LangChain, BentoML, vector search) with a <strong>40% quality improvement</strong> and zero human intervention, an internal AI assistant, and an LLM-as-a-Judge quality validation system."),
+     "European leader in language and content services. Led AI adoption and defined the roadmap with the Head of AI and PM. Shipped agentic RAG translation with a <strong>40% quality improvement</strong> and zero human intervention, an internal AI assistant, and an LLM-as-a-Judge quality validation system."),
     ("qlip-ai.png", "Founding ML Engineer · qlip.ai, Station F", "2022 – 2024",
      "First hire at an AI startup building a video highlights generator. Built the full ML pipeline from scratch (topic modeling, sentiment analysis, summarization, multilingual LLM integration on AWS) and took product decisions as part of the founding team."),
     ("stanford.png", "Data Scientist · Language &amp; Cognition Lab, Stanford University", "2020 – 2022",
@@ -216,7 +216,7 @@ CONTENT = {
               "Organized and moderated the NLP and Chatbots round table with M. Baroni, F. Yvon, F. Béchet and others, plus an Industrial Challenges session."),
   "teaching": [
     ("sup-de-vinci.png", "NLP &amp; AI Instructor", "Sup de Vinci, Paris · 2024",
-     "Designed and taught a 35-hour NLP and Generative AI course for Master 2 Data Science students: transformers, LLMs, embeddings, prompt engineering, RAG and conversational AI, with hands-on case studies such as Amazon review analysis and a RAG-based Q&amp;A system."),
+     "Designed and taught a 35-hour NLP and Generative AI course for Master 2 Data Science students.</p><p>Topics covered: transformers, LLMs, embeddings, prompt engineering, RAG and conversational AI, with hands-on case studies such as Amazon review analysis and a RAG-based Q&amp;A system."),
     ("openclassrooms.png", "Data Science Mentor", "OpenClassrooms · 2022 – 2024",
      "Mentored professionals through Data Science and Machine Learning certification projects and career transitions into AI/ML."),
     ("icis.svg", "R Programming Instructor", "ICIS Conference · 2021",
@@ -256,7 +256,7 @@ CONTENT = {
         "teaching": "Cours &amp; mentorat choisis", "pubs": "Publications choisies", "beyond": "En dehors du travail"},
   "now": [
     {"logo": "botiqueai.png", "role": "Cofondatrice", "org": "BotiqueAI, Paris", "date": "2025 – aujourd'hui", "shot": "botiqueai-site.jpg", "badge": "Agréée CII",
-     "body": ["Studio de conseil en IA qui accompagne les entreprises de la stratégie IA jusqu'aux systèmes en production (agents, RAG, chatbots), avec plus de 20 clients dans plus de 10 secteurs."],
+     "body": ["Studio de conseil en IA qui accompagne les entreprises de la stratégie IA jusqu'aux systèmes en production (agents, RAG, chatbots)."],
      "projects_label": "Projets phares",
      "projects": [("Boti", "assistants IA pour les petites entreprises", "https://www.botiqueai.com/lp/ai-consultancy"),
                   ("Aria", "chatbot IA pour boutiques Shopify et WordPress", "https://www.botiqueai.com/products/aria")],
@@ -266,9 +266,9 @@ CONTENT = {
   ],
   "prev": [
     ("thefork.png", "Lead AI Engineer · TheFork, une entreprise Tripadvisor", "2025 – 2026",
-     "Responsable de la vision produit d'<strong>AskTheFork</strong>, une expérience de découverte de restaurants propulsée par l'IA qui remplace les filtres traditionnels par une recherche en langage naturel sur les menus, photos et avis (RAG), lancée avec un <strong>taux de conversion supérieur de 5 %</strong>. Pilotage de l'architecture (LangGraph, GPT-4o, OpenSearch), classifieur de restaurants par LLM sur 300 tags, pipelines d'évaluation (Arize) et feuille de route IA de l'équipe avec le Head of AI et le Produit. <a href=\"https://www.media.thiga.co/en/ai-strategy-why-thefork-ditched-the-chatbot\" target=\"_blank\" rel=\"noopener\">Lire l'étude de cas →</a>"),
+     "Responsable de la vision produit d'<strong>AskTheFork</strong>, une expérience de découverte de restaurants propulsée par l'IA qui remplace les filtres traditionnels par une recherche en langage naturel, lancée avec un <strong>taux de conversion supérieur de 5 %</strong>. Classifieur de restaurants par LLM sur 300 tags, pipelines d'évaluation (Arize) et feuille de route IA de l'équipe avec le Head of AI et le Produit."),
     ("acolad.png", "Ingénieure IA · Acolad Group, Paris", "2024 – 2025",
-     "Leader européen des services linguistiques et de contenu. Pilotage de l'adoption de l'IA et définition de la feuille de route avec le Head of AI et le PM. Mise en production d'une traduction par RAG agentique (LangChain, BentoML, recherche vectorielle) avec <strong>40 % d'amélioration de la qualité</strong> sans intervention humaine, d'un assistant IA interne et d'un système de validation qualité LLM-as-a-Judge."),
+     "Leader européen des services linguistiques et de contenu. Pilotage de l'adoption de l'IA et définition de la feuille de route avec le Head of AI et le PM. Mise en production d'une traduction par RAG agentique avec <strong>40 % d'amélioration de la qualité</strong> sans intervention humaine, d'un assistant IA interne et d'un système de validation qualité LLM-as-a-Judge."),
     ("qlip-ai.png", "Founding ML Engineer · qlip.ai, Station F", "2022 – 2024",
      "Première recrue d'une startup IA développant un générateur de temps forts vidéo. Construction de tout le pipeline ML de zéro (topic modeling, analyse de sentiment, résumé automatique, intégration de LLM multilingues sur AWS) et participation aux décisions produit au sein de l'équipe fondatrice."),
     ("stanford.png", "Data Scientist · Language &amp; Cognition Lab, Université Stanford", "2020 – 2022",
@@ -292,7 +292,7 @@ CONTENT = {
               "Organisation et modération de la table ronde TAL et chatbots avec M. Baroni, F. Yvon, F. Béchet et d'autres, ainsi que d'une session sur les défis industriels."),
   "teaching": [
     ("sup-de-vinci.png", "Enseignante en TAL et IA", "Sup de Vinci, Paris · 2024",
-     "Conception et enseignement d'un cours de 35 heures sur le TAL et l'IA générative pour des étudiants de Master 2 Data Science : transformers, LLM, embeddings, prompt engineering, RAG et IA conversationnelle, avec des cas pratiques comme l'analyse d'avis Amazon et un système de questions-réponses basé sur RAG."),
+     "Conception et enseignement d'un cours de 35 heures sur le TAL et l'IA générative pour des étudiants de Master 2 Data Science.</p><p>Thèmes abordés : transformers, LLM, embeddings, prompt engineering, RAG et IA conversationnelle, avec des cas pratiques comme l'analyse d'avis Amazon et un système de questions-réponses basé sur RAG."),
     ("openclassrooms.png", "Mentore Data Science", "OpenClassrooms · 2022 – 2024",
      "Accompagnement de professionnels dans leurs projets de certification en Data Science et Machine Learning et dans leur reconversion vers l'IA."),
     ("icis.svg", "Formatrice R", "Conférence ICIS · 2021",
