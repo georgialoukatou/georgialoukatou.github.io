@@ -86,11 +86,13 @@ CONTENT = {
         "teaching": "Selected Courses &amp; Mentoring", "pubs": "Selected Publications", "beyond": "Beyond Work"},
   "now": [
     {"logo": "botiqueai.png", "role": "Co-Founder", "org": "BotiqueAI, Paris", "date": "2025 – Present", "shot": "botiqueai-site.jpg", "badge": "CII-certified",
-     "body": ["An AI consulting studio helping companies navigate AI adoption, from strategic advisory and integration roadmaps to end-to-end delivery of production AI systems (agents, RAG, chatbots). Clients span <strong>20+ companies across 10+ sectors</strong>, including retail, hospitality, legal and education.",
-              "Key project: <strong>Aria</strong>, an AI chatbot platform for Shopify and WordPress merchants, with 24/7 customer support, real-time product search and lead capture."],
+     "body": ["An AI consulting studio helping companies navigate AI adoption, from strategic advisory and integration roadmaps to end-to-end delivery of production AI systems (agents, RAG, chatbots). Clients span <strong>20+ companies across 10+ sectors</strong>, including retail, hospitality, legal and education."],
+     "projects_label": "Key projects",
+     "projects": [("Boti", "a team of AI assistants for small businesses across sales, marketing, customer support, HR, finance and productivity, plugged into the tools they already use (WhatsApp, Gmail, HubSpot, Shopify…). GDPR and AI Act compliant, hosted in the EU.", "https://www.botiqueai.com/lp/ai-consultancy"),
+                  ("Aria", "an AI chatbot for Shopify and WordPress stores: 24/7 customer support, real-time product search, lead capture and handoff to a human when needed.", "https://www.botiqueai.com/products/aria")],
      "chips": ["Agentic AI", "RAG", "AI Strategy", "Chatbots"],
-     "links": [("Watch the Aria demo →", "https://www.youtube.com/watch?v=iWUjmfBZiLE"), ("botiqueai.com", "https://www.botiqueai.com/"),
-               ("LinkedIn", "https://www.linkedin.com/company/botique-ai"), ("Instagram", "https://www.instagram.com/botiqueai/")]},
+     "links": [("botiqueai.com", "https://www.botiqueai.com/"),
+               ("icon:linkedin", "https://www.linkedin.com/company/botique-ai"), ("icon:instagram", "https://www.instagram.com/botiqueai/")]},
   ],
   "prev": [
     ("thefork.png", "Lead AI Engineer · TheFork, a Tripadvisor company", "2025 – 2026",
@@ -134,7 +136,7 @@ CONTENT = {
   "beyond": ["Trained in theater and critical thinking for science communication. Communicating AI well matters as much as building it.",
              "Classically trained musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
              "Traveled to 50+ countries, and counting."],
-  "cta_title": "Chat with me", "marquee": "Where I've worked, taught &amp; spoken",
+  "cta_title": "Chat with me", "marquee": "Organizations",
   "nav_posts": "Posts", "posts_intro": "Notes on AI in production, evaluation and adoption, also shared on LinkedIn.",
   "posts_follow": "Follow me on LinkedIn →", "posts_paper": "Read", "home": "Home",
   "cta_chips": ["AI Strategy &amp; Advisory", "Custom AI Systems", "Speaking &amp; Workshops", "AI Training &amp; Enablement"],
@@ -160,11 +162,13 @@ CONTENT = {
         "teaching": "Cours &amp; mentorat choisis", "pubs": "Publications choisies", "beyond": "En dehors du travail"},
   "now": [
     {"logo": "botiqueai.png", "role": "Cofondatrice", "org": "BotiqueAI, Paris", "date": "2025 – aujourd'hui", "shot": "botiqueai-site.jpg", "badge": "Agréée CII",
-     "body": ["Studio de conseil en IA qui accompagne les entreprises dans l'adoption de l'IA, du conseil stratégique et des feuilles de route d'intégration jusqu'à la livraison de systèmes d'IA en production (agents, RAG, chatbots). Plus de <strong>20 entreprises clientes dans plus de 10 secteurs</strong>, dont le commerce, l'hôtellerie, le juridique et l'éducation.",
-              "Projet phare : <strong>Aria</strong>, une plateforme de chatbot IA pour les marchands Shopify et WordPress, avec support client 24h/24, recherche de produits en temps réel et capture de leads."],
+     "body": ["Studio de conseil en IA qui accompagne les entreprises dans l'adoption de l'IA, du conseil stratégique et des feuilles de route d'intégration jusqu'à la livraison de systèmes d'IA en production (agents, RAG, chatbots). Plus de <strong>20 entreprises clientes dans plus de 10 secteurs</strong>, dont le commerce, l'hôtellerie, le juridique et l'éducation."],
+     "projects_label": "Projets phares",
+     "projects": [("Boti", "une équipe d'assistants IA pour les petites entreprises, en commercial, marketing, SAV, RH, finance et productivité, branchée sur les outils qu'elles utilisent déjà (WhatsApp, Gmail, HubSpot, Shopify…). Conforme RGPD et AI Act, hébergée en Europe.", "https://www.botiqueai.com/lp/ai-consultancy"),
+                  ("Aria", "un chatbot IA pour les boutiques Shopify et WordPress : support client 24h/24, recherche produit en temps réel, capture de leads et transfert à un humain si besoin.", "https://www.botiqueai.com/products/aria")],
      "chips": ["IA agentique", "RAG", "Stratégie IA", "Chatbots"],
-     "links": [("Voir la démo d'Aria →", "https://www.youtube.com/watch?v=iWUjmfBZiLE"), ("botiqueai.com", "https://www.botiqueai.com/"),
-               ("LinkedIn", "https://www.linkedin.com/company/botique-ai"), ("Instagram", "https://www.instagram.com/botiqueai/")]},
+     "links": [("botiqueai.com", "https://www.botiqueai.com/"),
+               ("icon:linkedin", "https://www.linkedin.com/company/botique-ai"), ("icon:instagram", "https://www.instagram.com/botiqueai/")]},
   ],
   "prev": [
     ("thefork.png", "Lead AI Engineer · TheFork, une entreprise Tripadvisor", "2025 – 2026",
@@ -208,7 +212,7 @@ CONTENT = {
   "beyond": ["Formée au théâtre et à l'esprit critique pour la médiation scientifique. Bien expliquer l'IA compte autant que la construire.",
              "Musicienne de formation classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
              "Plus de 50 pays visités, et ce n'est pas fini."],
-  "cta_title": "Discutons", "marquee": "Là où j'ai travaillé, enseigné et pris la parole",
+  "cta_title": "Discutons", "marquee": "Organisations",
   "nav_posts": "Posts", "posts_intro": "Notes sur l'IA en production, l'évaluation et l'adoption, également publiées sur LinkedIn (en anglais).",
   "posts_follow": "Me suivre sur LinkedIn →", "posts_paper": "Lire", "home": "Accueil",
   "cta_chips": ["Stratégie &amp; conseil IA", "Systèmes d'IA sur mesure", "Conférences &amp; ateliers", "Formation &amp; acculturation IA"],
@@ -219,6 +223,19 @@ CONTENT = {
 }
 
 EXT = 'target="_blank" rel="noopener"'
+
+
+ICONS = {
+  "linkedin": ("LinkedIn", '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>'),
+  "instagram": ("Instagram", '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'),
+}
+
+
+def icon_link(label, url):
+    if label.startswith("icon:"):
+        name, svg = ICONS[label[5:]]
+        return f'<a class="icon-link" href="{url}" {EXT} aria-label="BotiqueAI on {name}" title="{name}">{svg}</a>'
+    return f'<a href="{url}" {EXT}>{label}</a>'
 
 
 def chips(items, cls="chips"):
@@ -417,7 +434,10 @@ def render_home(lang):
     now_cards = ""
     for r in c["now"]:
         body = "".join(f"<p>{p}</p>" for p in r["body"])
-        links = "".join(f'<a href="{u}" {EXT}>{t}</a>' for t, u in r["links"])
+        if r.get("projects"):
+            body += f'<p class="projects-label">{r["projects_label"]}</p><ul class="projects">' + "".join(
+                f'<li><a href="{u}" {EXT}><strong>{n}</strong></a>: {d}</li>' for n, d, u in r["projects"]) + "</ul>"
+        links = "".join(icon_link(t, u) for t, u in r["links"])
         shot = (f'<a class="card-shot" href="https://www.botiqueai.com/" {EXT}><img src="/assets/{r["shot"]}" alt="botiqueai.com" width="1200" height="667" loading="lazy"></a>'
                 if r.get("shot") else "")
         badge = f'<span class="badge-inline">{r["badge"]}</span>' if r.get("badge") else ""
@@ -502,7 +522,6 @@ def render_home(lang):
   </div>
   <div class="wrap"><dl class="stats">{stats}</dl></div>
   <div class="marquee" aria-label="{c["marquee"]}">
-    <p class="marquee-label wrap">{c["marquee"]}</p>
     <div class="marquee-track"><div class="group">{marquee}</div><div class="group" aria-hidden="true">{marquee}</div></div>
   </div>
 </header>
