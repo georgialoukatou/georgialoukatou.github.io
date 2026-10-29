@@ -231,7 +231,7 @@ CONTENT = {
              "Classically trained musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
              "Traveled to 50+ countries, and counting."],
   "cta_title": "Chat with me", "marquee": "Organizations",
-  "nav_posts": "Posts", "posts_intro": "Notes on AI adoption, evaluation and regulation, also shared on LinkedIn.", "posts_via": "posted by",
+  "nav_posts": "Posts", "posts_intro": "Notes on AI adoption, evaluation and regulation, also shared on LinkedIn.", "posts_via": "posted by", "posts_all": "All posts",
   "posts_follow": "Follow me on LinkedIn →", "posts_paper": "Read", "home": "Home",
   "cta_chips": ["AI Strategy &amp; Advisory", "Custom AI Systems", "Speaking &amp; Workshops", "AI Training &amp; Enablement"],
   "cta_body": "I help companies navigate AI strategy and build systems that deliver real value. Whether you need hands-on engineering, executive advisory, or a talk that cuts through the hype, let's talk.",
@@ -307,7 +307,7 @@ CONTENT = {
              "Musicienne de formation classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
              "Plus de 50 pays visités, et ce n'est pas fini."],
   "cta_title": "Discutons", "marquee": "Organisations",
-  "nav_posts": "Posts", "posts_intro": "Notes sur l'adoption de l'IA, son évaluation et sa réglementation, également publiées sur LinkedIn (la plupart en anglais).", "posts_via": "publié par",
+  "nav_posts": "Posts", "posts_intro": "Notes sur l'adoption de l'IA, son évaluation et sa réglementation, également publiées sur LinkedIn (la plupart en anglais).", "posts_via": "publié par", "posts_all": "Tous les posts",
   "posts_follow": "Me suivre sur LinkedIn →", "posts_paper": "Lire", "home": "Accueil",
   "cta_chips": ["Stratégie &amp; conseil IA", "Systèmes d'IA sur mesure", "Conférences &amp; ateliers", "Formation &amp; acculturation IA"],
   "cta_body": "J'aide les entreprises à définir leur stratégie IA et à construire des systèmes qui apportent une vraie valeur. Que vous ayez besoin d'ingénierie, de conseil auprès de la direction ou d'une intervention qui va au-delà des effets d'annonce, parlons-en.",
@@ -654,23 +654,37 @@ def render_blocks(blocks):
     return out
 
 
+def post_label(p):
+    """Title for the list: the post title, or the opening words of untitled posts."""
+    if p.get("title"):
+        return p["title"]
+    import re as _re
+    first = next(b for b in p["body"] if isinstance(b, str))
+    text = _re.sub(r"<[^>]+>", "", first)
+    return text if len(text) <= 70 else text[:70].rsplit(" ", 1)[0] + "…"
+
+
 def render_posts(lang):
     c = CONTENT[lang]
-    items = ""
-    for p in POSTS:
+    articles, nav = "", ""
+    for i, p in enumerate(POSTS):
         y, mo, d = p["date"]
+        pid = f"post-{y:04d}-{mo:02d}-{d:02d}"
         date_txt = f"{d} {MONTHS[lang][mo - 1]} {y}"
         links = "".join(f'<a href="{u}" {EXT}>{t} →</a>' for t, u in p["links"])
         title = f'<h2>{p["title"]}</h2>' if p.get("title") else '<div class="post-sep"></div>'
         via = f' · {c["posts_via"]} {p["via"]}' if p.get("via") else ""
         plang = f' lang="{p["lang"]}"' if p.get("lang") else ""
-        items += f'''
-      <article class="post"{plang}>
+        articles += f'''
+      <article class="post" id="{pid}"{plang}>
         <time datetime="{y:04d}-{mo:02d}-{d:02d}">{date_txt}{via}</time>
         {title}
         <div class="post-body">{render_blocks(p["body"])}</div>
         <p class="links">{links}</p>
       </article>'''
+        current = ' aria-current="true"' if i == 0 else ""
+        nav += f'''
+        <li><a href="#{pid}" data-post="{pid}"{current}><time>{date_txt}</time><span>{post_label(p)}</span></a></li>'''
     main = f'''<main id="main" class="posts-page">
   <header class="posts-head">
     <div class="wrap">
@@ -679,12 +693,43 @@ def render_posts(lang):
       <p class="links"><a href="{LINKEDIN}recent-activity/all/" {EXT}>{c["posts_follow"]}</a></p>
     </div>
   </header>
-  <div class="wrap posts-list">{items}
+  <div class="wrap posts-layout">
+    <div class="post-reader" id="reader">{articles}
+    </div>
+    <nav class="post-index" aria-label="{c["posts_all"]}">
+      <p class="post-index-title">{c["posts_all"]}</p>
+      <ol>{nav}
+      </ol>
+    </nav>
   </div>
 </main>'''
     title = f'{c["nav_posts"]} · {c["name"]}'
-    return shell(lang, "posts/", title, c["posts_intro"], main)
+    return shell(lang, "posts/", title, c["posts_intro"], main, POSTS_SCRIPT)
 
+
+POSTS_SCRIPT = """(function () {
+  var posts = Array.prototype.slice.call(document.querySelectorAll('.post-reader .post'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.post-index a'));
+  if (!posts.length) return;
+  function show(id, scroll) {
+    var found = posts.some(function (p) { return p.id === id; });
+    if (!found) id = posts[0].id;
+    posts.forEach(function (p) { p.hidden = p.id !== id; });
+    links.forEach(function (a) { if (a.dataset.post === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    if (scroll) {
+      var r = document.getElementById('reader');
+      if (r.getBoundingClientRect().top < 70 || window.innerWidth < 900) r.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  }
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      history.replaceState(null, '', '#' + a.dataset.post);
+      show(a.dataset.post, true);
+    });
+  });
+  show(location.hash.slice(1), false);
+})();"""
 
 if __name__ == "__main__":
     for lang in LANGS:
