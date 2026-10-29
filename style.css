@@ -98,18 +98,19 @@ h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(46px, 7.5vw, 
 .tabbar-wrap { position: sticky; top: 64px; z-index: 50; background: var(--band); border-bottom: 1px solid var(--rule); scroll-margin-top: 64px; }
 .tabbar { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 16px 8px; margin-inline: -8px; }
 .tabbar::-webkit-scrollbar { display: none; }
-.tabbar button { --c: #1E6B61; appearance: none; font: inherit; font-size: 17.5px; font-weight: 600; white-space: nowrap; cursor: pointer;
+.tabbar a { --c: #1E6B61; appearance: none; font: inherit; font-size: 17.5px; font-weight: 600; white-space: nowrap; cursor: pointer; text-decoration: none;
   padding: 11px 22px; border-radius: 999px; border: 1.5px solid color-mix(in srgb, var(--c) 35%, transparent);
   color: var(--c); background: color-mix(in srgb, var(--c) 9%, var(--surface)); transition: background .25s, color .25s, transform .15s, box-shadow .25s; }
-.tabbar button:nth-child(1) { --c: #1E6B61; }
-.tabbar button:nth-child(2) { --c: #2A5E86; }
-.tabbar button:nth-child(3) { --c: #34509E; }
-.tabbar button:nth-child(4) { --c: #4B3FB0; }
-.tabbar button:nth-child(5) { --c: #6A3FA8; }
-.tabbar button:hover { transform: translateY(-1px); background: color-mix(in srgb, var(--c) 16%, var(--surface)); }
-.tabbar button[aria-selected="true"] { background: var(--c); color: #fff; border-color: var(--c); box-shadow: 0 3px 10px color-mix(in srgb, var(--c) 30%, transparent); }
-@media (prefers-color-scheme: dark) { .tabbar button { color: color-mix(in srgb, var(--c) 55%, #fff); } .tabbar button[aria-selected="true"] { color: #fff; } }
-.panel[hidden] { display: none; }
+.tabbar a:nth-child(1) { --c: #1E6B61; }
+.tabbar a:nth-child(2) { --c: #2A5E86; }
+.tabbar a:nth-child(3) { --c: #34509E; }
+.tabbar a:nth-child(4) { --c: #4B3FB0; }
+.tabbar a:nth-child(5) { --c: #6A3FA8; }
+.tabbar a:hover { transform: translateY(-1px); background: color-mix(in srgb, var(--c) 16%, var(--surface)); }
+.tabbar a[aria-current="true"] { background: var(--c); color: #fff; border-color: var(--c); box-shadow: 0 3px 10px color-mix(in srgb, var(--c) 30%, transparent); }
+@media (prefers-color-scheme: dark) { .tabbar a { color: color-mix(in srgb, var(--c) 55%, #fff); } .tabbar a[aria-current="true"] { color: #fff; } }
+.panel { scroll-margin-top: 150px; }
+.panel + .panel { border-top: 1px solid var(--rule); }
 
 /* Blocks: clearly separated sections */
 .block { padding: clamp(44px, 6vw, 72px) 0; }
@@ -245,7 +246,6 @@ strong { font-weight: 600; color: var(--ink); }
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .25s, border-color .25s; }
 .reveal.in { opacity: 1; transform: none; }
-.panel:not([hidden]) { animation: fade .45s ease both; }
 
 .card, .talk, .feature, .edu li, .post { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .card:hover, .talk:hover, .feature:hover, .edu li:hover, .post:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(0,0,0,.04), 0 18px 40px rgba(0,0,0,.10); border-color: color-mix(in srgb, var(--g2) 35%, var(--rule)); }
@@ -253,7 +253,7 @@ strong { font-weight: 600; color: var(--ink); }
 .feature-media { overflow: hidden; display: block; }
 .feature-media img, .talk-media img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .feature:hover .feature-media img, .talk:hover .talk-media img { transform: scale(1.03); }
-.tabbar button { transition: color .2s; }
+.tabbar a { transition: color .2s; }
 .btn { transition: transform .15s, background .25s, color .25s, border-color .25s, box-shadow .25s; }
 .btn:hover { box-shadow: 0 8px 20px color-mix(in srgb, var(--g2) 28%, transparent); }
 .cta { background-size: 200% 200%; animation: shift 12s ease-in-out infinite; }
@@ -335,8 +335,8 @@ strong { font-weight: 600; color: var(--ink); }
   .cards.one .card-shot { margin: 0 0 20px; }
   .marquee .group { gap: 28px; padding-right: 28px; }
   .card-shot { margin: -26px -26px 18px; }
-  .tabbar button { padding: 9px 16px; font-size: 15.5px; }
+  .tabbar a { padding: 9px 16px; font-size: 15.5px; }
   .nav .btn-small { padding: 7px 13px; }
 }
 
-@media print { .nav, .tabbar-wrap, .cta-section .cta-row { display: none; } .panel[hidden] { display: block; } }
+@media print { .nav, .tabbar-wrap, .cta-section .cta-row { display: none; } }

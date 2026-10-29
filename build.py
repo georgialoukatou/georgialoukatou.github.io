@@ -175,6 +175,7 @@ CONTENT = {
              "PhD in AI from ENS Paris, with publications in ACL and <em>Cognition</em>."],
   "book": "Book a call", "email_btn": "Email me", "cii": "CII-certified",
   "stats": [("9 years", "AI research &amp; industry"), ("Co-Founder", "BotiqueAI, Paris"), ("PhD", "AI, ENS Paris")],
+  "sections": "Sections",
   "tabs": {"experience": "Experience", "speaking": "Selected Speaking", "teaching": "Selected Teaching", "publications": "Selected Publications", "about": "About"},
   "h": {"now": "Now", "prev": "Previously", "edu": "Education", "podcast": "Podcast", "talks": "Selected Talks &amp; Events",
         "teaching": "Selected Courses &amp; Mentoring", "pubs": "Selected Publications", "beyond": "Beyond Work"},
@@ -251,6 +252,7 @@ CONTENT = {
              "Doctorat en IA à l'ENS Paris, avec des publications à ACL et dans <em>Cognition</em>."],
   "book": "Prendre rendez-vous", "email_btn": "M'écrire", "cii": "Agréée CII",
   "stats": [("9 ans", "recherche en IA &amp; industrie"), ("Cofondatrice", "BotiqueAI, Paris"), ("Doctorat", "IA, ENS Paris")],
+  "sections": "Sections",
   "tabs": {"experience": "Expérience", "speaking": "Interventions choisies", "teaching": "Enseignements choisis", "publications": "Publications choisies", "about": "À propos"},
   "h": {"now": "Aujourd'hui", "prev": "Auparavant", "edu": "Formation", "podcast": "Podcast", "talks": "Conférences &amp; événements choisis",
         "teaching": "Cours &amp; mentorat choisis", "pubs": "Publications choisies", "beyond": "En dehors du travail"},
@@ -481,34 +483,38 @@ COMMON_SCRIPT = """(function () {
 })();"""
 
 TAB_SCRIPT = '''(function () {
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-  var ids = tabs.map(function (t) { return t.dataset.tab; });
-  function show(id, focus) {
-    if (ids.indexOf(id) < 0) id = ids[0];
-    tabs.forEach(function (t) {
-      var on = t.dataset.tab === id;
-      t.setAttribute('aria-selected', on);
-      t.tabIndex = on ? 0 : -1;
-      var pnl = document.getElementById('panel-' + t.dataset.tab); pnl.hidden = !on;
-      if (on && focus) t.focus();
+  var links = Array.prototype.slice.call(document.querySelectorAll('.tabbar a'));
+  var bar = document.querySelector('.tabbar');
+  var sections = links.map(function (a) { return document.getElementById(a.dataset.tab); });
+  var current;
+  function mark(id) {
+    if (id === current) return;
+    current = id;
+    links.forEach(function (a) {
+      var on = a.dataset.tab === id;
+      if (on) {
+        a.setAttribute('aria-current', 'true');
+        bar.scrollTo({left: a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2, behavior: 'smooth'});
+      } else a.removeAttribute('aria-current');
     });
   }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () {
-      show(t.dataset.tab);
-      history.replaceState(null, '', '#' + t.dataset.tab);
-      var bar = document.querySelector('.tabbar-wrap');
-      if (bar.getBoundingClientRect().top < 0) bar.scrollIntoView({behavior: 'smooth'});
-    });
-    t.addEventListener('keydown', function (e) {
-      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (d) { var n = tabs[(i + d + tabs.length) % tabs.length]; show(n.dataset.tab, true); history.replaceState(null, '', '#' + n.dataset.tab); }
+  function spy() {
+    var line = document.querySelector('.tabbar-wrap').getBoundingClientRect().bottom + 40, id = sections[0].id;
+    sections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) id = s.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) id = sections[sections.length - 1].id;
+    mark(id);
+  }
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById(a.dataset.tab).scrollIntoView({behavior: 'smooth'});
+      history.replaceState(null, '', '#' + a.dataset.tab);
     });
   });
-  show(location.hash.slice(1));
-  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+  window.addEventListener('scroll', spy, {passive: true});
+  spy();
   document.querySelectorAll('.lang-switch a').forEach(function (a) {
-    a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href') + location.hash; });
+    a.addEventListener('click', function () { if (current) a.href = a.getAttribute('href') + '#' + current; });
   });
 })();'''
 
@@ -526,7 +532,7 @@ def block(num, title, inner):
 def render_home(lang):
     c = CONTENT[lang]
     h = c["h"]
-    tabs = "".join(f'<button role="tab" id="tab-{k}" aria-controls="panel-{k}" data-tab="{k}">{v}</button>' for k, v in c["tabs"].items())
+    tabs = "".join(f'<a href="#{k}" data-tab="{k}">{v}</a>' for k, v in c["tabs"].items())
 
     now_cards = ""
     for r in c["now"]:
@@ -622,25 +628,25 @@ def render_home(lang):
 
 <main id="main" class="tabs-area">
   <div class="tabbar-wrap">
-    <div class="wrap"><div class="tabbar" role="tablist">{tabs}</div></div>
+    <div class="wrap"><nav class="tabbar" aria-label="{c["sections"]}">{tabs}</nav></div>
   </div>
-  <div class="panel" role="tabpanel" id="panel-experience" aria-labelledby="tab-experience">
+  <div class="panel" id="experience">
     {block(1, h["now"], f'<div class="cards one">{now_cards}</div>')}
     {block(2, h["prev"], f'<ol class="timeline">{timeline}</ol>')}
     {block(3, h["edu"], f'<ul class="edu">{edu}</ul>')}
   </div>
-  <div class="panel" role="tabpanel" id="panel-speaking" aria-labelledby="tab-speaking">
-    {block(1, h["podcast"], podcast)}
-    {block(2, h["talks"], talks)}
+  <div class="panel" id="speaking">
+    {block(4, h["podcast"], podcast)}
+    {block(5, h["talks"], talks)}
   </div>
-  <div class="panel" role="tabpanel" id="panel-teaching" aria-labelledby="tab-teaching">
-    {block(1, h["teaching"], f'<div class="cards three">{teach}</div>')}
+  <div class="panel" id="teaching">
+    {block(6, h["teaching"], f'<div class="cards three">{teach}</div>')}
   </div>
-  <div class="panel" role="tabpanel" id="panel-publications" aria-labelledby="tab-publications">
-    {block(1, h["pubs"], f'<ol class="pubs">{pubs}</ol><p class="pub-note">{c["equal"]}</p><p class="links"><a href="{SCHOLAR}" {EXT}>{c["scholar"]}</a></p>')}
+  <div class="panel" id="publications">
+    {block(7, h["pubs"], f'<ol class="pubs">{pubs}</ol><p class="pub-note">{c["equal"]}</p><p class="links"><a href="{SCHOLAR}" {EXT}>{c["scholar"]}</a></p>')}
   </div>
-  <div class="panel" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
-    {block(1, h["beyond"], f'<div class="beyond">{beyond}</div>')}
+  <div class="panel" id="about">
+    {block(8, h["beyond"], f'<div class="beyond">{beyond}</div>')}
   </div>
 </main>'''
     return shell(lang, "", c["title"], c["desc"], main, TAB_SCRIPT)
