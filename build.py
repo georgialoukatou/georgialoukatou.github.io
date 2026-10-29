@@ -86,10 +86,10 @@ CONTENT = {
         "teaching": "Selected Courses &amp; Mentoring", "pubs": "Selected Publications", "beyond": "Beyond Work"},
   "now": [
     {"logo": "botiqueai.png", "role": "Co-Founder", "org": "BotiqueAI, Paris", "date": "2025 – Present", "shot": "botiqueai-site.jpg", "badge": "CII-certified",
-     "body": ["An AI consulting studio helping companies navigate AI adoption, from strategic advisory and integration roadmaps to end-to-end delivery of production AI systems (agents, RAG, chatbots). Clients span <strong>20+ companies across 10+ sectors</strong>, including retail, hospitality, legal and education."],
+     "body": ["An AI consulting studio taking companies from AI strategy to production systems (agents, RAG, chatbots), with 20+ clients across 10+ sectors."],
      "projects_label": "Key projects",
-     "projects": [("Boti", "a team of AI assistants for small businesses across sales, marketing, customer support, HR, finance and productivity, plugged into the tools they already use (WhatsApp, Gmail, HubSpot, Shopify…). GDPR and AI Act compliant, hosted in the EU.", "https://www.botiqueai.com/lp/ai-consultancy"),
-                  ("Aria", "an AI chatbot for Shopify and WordPress stores: 24/7 customer support, real-time product search, lead capture and handoff to a human when needed.", "https://www.botiqueai.com/products/aria")],
+     "projects": [("Boti", "AI assistants for small businesses", "https://www.botiqueai.com/lp/ai-consultancy"),
+                  ("Aria", "AI chatbot for Shopify &amp; WordPress stores", "https://www.botiqueai.com/products/aria")],
      "chips": ["Agentic AI", "RAG", "AI Strategy", "Chatbots"],
      "links": [("botiqueai.com", "https://www.botiqueai.com/"),
                ("icon:linkedin", "https://www.linkedin.com/company/botique-ai"), ("icon:instagram", "https://www.instagram.com/botiqueai/")]},
@@ -162,10 +162,10 @@ CONTENT = {
         "teaching": "Cours &amp; mentorat choisis", "pubs": "Publications choisies", "beyond": "En dehors du travail"},
   "now": [
     {"logo": "botiqueai.png", "role": "Cofondatrice", "org": "BotiqueAI, Paris", "date": "2025 – aujourd'hui", "shot": "botiqueai-site.jpg", "badge": "Agréée CII",
-     "body": ["Studio de conseil en IA qui accompagne les entreprises dans l'adoption de l'IA, du conseil stratégique et des feuilles de route d'intégration jusqu'à la livraison de systèmes d'IA en production (agents, RAG, chatbots). Plus de <strong>20 entreprises clientes dans plus de 10 secteurs</strong>, dont le commerce, l'hôtellerie, le juridique et l'éducation."],
+     "body": ["Studio de conseil en IA qui accompagne les entreprises de la stratégie IA jusqu'aux systèmes en production (agents, RAG, chatbots), avec plus de 20 clients dans plus de 10 secteurs."],
      "projects_label": "Projets phares",
-     "projects": [("Boti", "une équipe d'assistants IA pour les petites entreprises, en commercial, marketing, SAV, RH, finance et productivité, branchée sur les outils qu'elles utilisent déjà (WhatsApp, Gmail, HubSpot, Shopify…). Conforme RGPD et AI Act, hébergée en Europe.", "https://www.botiqueai.com/lp/ai-consultancy"),
-                  ("Aria", "un chatbot IA pour les boutiques Shopify et WordPress : support client 24h/24, recherche produit en temps réel, capture de leads et transfert à un humain si besoin.", "https://www.botiqueai.com/products/aria")],
+     "projects": [("Boti", "assistants IA pour les petites entreprises", "https://www.botiqueai.com/lp/ai-consultancy"),
+                  ("Aria", "chatbot IA pour boutiques Shopify et WordPress", "https://www.botiqueai.com/products/aria")],
      "chips": ["IA agentique", "RAG", "Stratégie IA", "Chatbots"],
      "links": [("botiqueai.com", "https://www.botiqueai.com/"),
                ("icon:linkedin", "https://www.linkedin.com/company/botique-ai"), ("icon:instagram", "https://www.instagram.com/botiqueai/")]},
@@ -435,8 +435,8 @@ def render_home(lang):
     for r in c["now"]:
         body = "".join(f"<p>{p}</p>" for p in r["body"])
         if r.get("projects"):
-            body += f'<p class="projects-label">{r["projects_label"]}</p><ul class="projects">' + "".join(
-                f'<li><a href="{u}" {EXT}><strong>{n}</strong></a>: {d}</li>' for n, d, u in r["projects"]) + "</ul>"
+            body += f'<p class="projects"><strong>{r["projects_label"]}:</strong> ' + " · ".join(
+                f'<a href="{u}" {EXT}>{n}</a> ({d})' for n, d, u in r["projects"]) + "</p>"
         links = "".join(icon_link(t, u) for t, u in r["links"])
         shot = (f'<a class="card-shot" href="https://www.botiqueai.com/" {EXT}><img src="/assets/{r["shot"]}" alt="botiqueai.com" width="1200" height="667" loading="lazy"></a>'
                 if r.get("shot") else "")
@@ -521,9 +521,6 @@ def render_home(lang):
     <div class="hero-photo"><img src="/assets/georgia.jpg" alt="{c["photo_alt"]}" width="300" height="300"></div>
   </div>
   <div class="wrap"><dl class="stats">{stats}</dl></div>
-  <div class="marquee" aria-label="{c["marquee"]}">
-    <div class="marquee-track"><div class="group">{marquee}</div><div class="group" aria-hidden="true">{marquee}</div></div>
-  </div>
 </header>
 
 <main id="main" class="tabs-area">
