@@ -23,6 +23,100 @@ PUBLICATIONS = [
 
 # LinkedIn posts shown on /posts/ (newest first). Blocks: a string = paragraph, ("ul"|"ol", [items]) = list.
 POSTS = [
+  {'date': (2026, 10, 21),
+   'title': "What I've learned from failed AI projects",
+   'body': ['Do you think an AI project is a one-person job? One developer, one “AI person”: build it, ship it, done?',
+            'It rarely works that way. I keep seeing the same pattern: it comes down to communication and collaboration inside the team.',
+            'A few things that make all the difference:',
+            ('ol',
+             ["<strong>Involve the people who actually know the process</strong> in the room where the AI tool gets built. Unfortunately, that's not usually the case, even though domain knowledge is "
+              'key.',
+              '<strong>Understand what stakeholders actually want</strong>, not just what was said in the first kickoff meeting. Otherwise, you end up solving the wrong thing really well.',
+              '<strong>Define the target at the start.</strong> What does “good enough” look like? Without a clear metric, a project can run forever and still go nowhere.',
+              '<strong>Keep the feedback loop open during the whole project.</strong> Edge cases tend to magically show up once real users try the tool.']),
+            'The same lesson, every time: get the right people talking early, and often! 🙂'],
+   'links': []},
+  {'date': (2026, 10, 18),
+   'title': 'Where NOT to use AI?',
+   'body': ['In the rush to adopt AI, a quick reminder: some areas are high-risk under the EU AI Act. HR, education, credit and insurance, biometrics, critical infrastructure, justice, law '
+            'enforcement, migration and border control.',
+            '<strong>High-risk = strict rules.</strong>',
+            "Take HR. AI can help write a job ad or prepare interview questions. No problem. But screening CVs or ranking candidates? AI can't make the decision alone. Under GDPR, a person must make "
+            "the final decision. And the AI Act will add more: trained human oversight, informing candidates, monitoring the tool. Analyzing a candidate's emotions in a video interview is simply "
+            'banned.',
+            'If you are not sure where your use case fits, the EU has a free questionnaire: the AI Act Compliance Checker.',
+            'For me, the question is no longer “is AI capable of doing this?” but “who should decide this?”'],
+   'links': [('EU AI Act Compliance Checker', 'https://ai-act-service-desk.ec.europa.eu/en/eu-ai-act-compliance-checker')]},
+  {'date': (2026, 10, 14),
+   'title': None,
+   'body': ["A client asked this week: “If we pick the best AI model, it won't make things up anymore, right?” Honestly, no. Even the newest, most powerful models still “hallucinate.” Less often, but "
+            'it happens.',
+            "For example, a recent top model like GPT-5.4 gets it wrong around 7% of the time when summarizing a document*. And it's tricky, since a good model sounds confident even when it's wrong. "
+            'So we may not even notice!',
+            "AI is great, but not perfect. So for any serious decision, someone needs to check. That doesn't mean checking everything, of course. A first draft of an email isn't a financial decision. "
+            'The higher the stakes, the more control we need.',
+            "Paying for the biggest model isn't the only fix either. Asking the AI for its sources or adding simple guardrails often does more 🙂",
+            'At BotiqueAI, we keep it simple: use AI where it helps, review it, and keep people in the loop.',
+            '<small>*Source: Vectara Hallucination Leaderboard, May 2026.</small>'],
+   'links': [('Vectara Hallucination Leaderboard', 'https://lnkd.in/e_sgVZSb')]},
+  {'date': (2026, 10, 8),
+   'title': None,
+   'via': 'BotiqueAI',
+   'lang': 'fr',
+   'body': ["#BIG 2026 de Bpifrance c'était aujourd'hui, et on y était avec BotiqueAI. Le thème de la journée : le culot. Bien choisi, parce qu'avec l'IA, l'audace est indispensable. Mais elle ne "
+            'suffit pas sans un peu de recul.',
+            "Et justement, on a beaucoup parlé d'IA frugale, de coûts, d'impact environnemental. De cybersécurité aussi, des nouvelles réglementations, qui pèsent lourd pour les PME. Et de la place "
+            'des équipes dans tout ça.',
+            "<strong>Oser l'IA, oui. Mais pas à tout prix.</strong>",
+            "Une automatisation n'a pas toujours besoin d'IA, et une solution n'a pas toujours besoin du dernier modèle. Ce qui compte, c'est ce qui répond à nos besoins, avec des résultats qu'on peut "
+            'mesurer. Et ça ne marche pas sans former les équipes ni sans respecter le cadre réglementaire.',
+            "Pour nous, le vrai culot, c'est d'oser l'IA pour créer de la vraie valeur, et ça, c'est à la portée de chaque entreprise."],
+   'links': []},
+  {'date': (2026, 10, 7),
+   'title': None,
+   'body': ['In France, 40% of small businesses use AI in 2026. Up from 26% last year.',
+            "But that doesn't necessarily mean often use. And most of the use is content generation, not real automation. And only about half of the users are paying for a proper tool.",
+            "What's striking: belief that digital brings real value dropped 7 points this year. More businesses are going digital. Fewer think it's working.",
+            "I don't think that's about the technology. It's about fit, whether a tool solves a need you actually have. And many small businesses may not have endless resources to figure that out."],
+   'links': []},
+  {'date': (2026, 9, 16),
+   'title': '€35 million. Or 7% of global turnover.',
+   'body': ["That's the maximum fine under the AI Act, the EU's regulation on artificial intelligence.",
+            "And since August 2, 2026, it's no longer theoretical: authorities now have their full enforcement powers. The legal framework itself has existed since August 2025.",
+            '<strong>The full timeline:</strong>',
+            ('ul',
+             ['<strong>August 2024:</strong> the AI Act enters into force, no obligations apply yet',
+              '<strong>February 2025:</strong> prohibited practices banned (manipulation, social scoring, etc.)',
+              '<strong>August 2025:</strong> obligations for general purpose AI (GPAI) models, governance, and the penalties framework',
+              '<strong>August 2026:</strong> full application, including high-risk AI, and full enforcement powers for authorities']),
+            '<strong>3 tiers of penalties to know:</strong>',
+            ('ul',
+             ['Prohibited practices: up to €35M or 7% of global turnover',
+              'High-risk AI systems: up to €15M or 3% of global turnover',
+              'Misleading information to authorities: up to €7.5M or 1% of global turnover']),
+            "Good news for SMEs and startups: it's the lower of the two amounts that applies, unlike large corporations.",
+            "Bad news: “I didn't know” has never protected anyone from a regulator.",
+            "At BotiqueAI, we're compliant. And we watch over our clients' compliance too."],
+   'links': []},
+  {'date': (2025, 12, 26),
+   'title': 'Not every AI task needs a billion parameters.',
+   'body': ['I was recently discussing LLM speed and costs with a client who was asking about one of the latest OpenAI models.',
+            "“<em>Shouldn't we be using this for everything?</em>” he asked.",
+            'My answer: <strong>No. In fact, for many workflows, you might need the opposite.</strong>',
+            "It is becoming increasingly obvious that we don't need GPT-5 just to extract a name from a document. We are seeing a massive shift from “<em>bigger is better</em>” to “<em>efficient is "
+            'better</em>”.',
+            '<strong>Small Language Models (SLMs)</strong>',
+            'Unlike LLMs, SLMs operate with significantly fewer parameters (often in the millions). They trade “world knowledge” for hyper-efficiency in specific tasks. Not to forget that:',
+            ('ol',
+             ['<strong>Cost &amp; speed:</strong> SLMs offer similar performance for specific tasks at a fraction of the inference cost and latency.',
+              "<strong>Privacy &amp; control:</strong> Because they are lightweight, SLMs can run on-premise or locally on edge devices. Your data doesn't need to leave your infrastructure."]),
+            '<strong>The future: a separation of duties</strong>',
+            'We are heading toward a hybrid architecture.',
+            ('ul',
+             ['<strong>SLMs</strong> will handle the high-volume work like preprocessing, classification, PII redaction, guardrails, over-specific tasks.',
+              '<strong>LLMs</strong> will act as the “managers,” stepping in only when low confidence is detected or complex reasoning and refinement is needed.']),
+            'Even Menlo Ventures predicts that by 2026, models will move to the edge, driven by privacy and low latency, with inference costs for non-frontier models approaching $0.'],
+   'links': [('Menlo Ventures', 'https://lnkd.in/eSRT9ji7')]},
   {"date": (2025, 12, 8), "title": "Agent in Production Reality Check: Reliability &gt; Autonomy",
    "body": ["A new study of 306 practitioners across 26 domains confirms what many of us have experienced: reliability beats autonomy every single time.",
             ("ol", ["<strong>Structure over freestyling.</strong> The most successful agents aren't self-determining their paths. 80% of them use structured, static workflows. In production, success is found in predictable subtasks.",
@@ -137,7 +231,7 @@ CONTENT = {
              "Classically trained musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
              "Traveled to 50+ countries, and counting."],
   "cta_title": "Chat with me", "marquee": "Organizations",
-  "nav_posts": "Posts", "posts_intro": "Notes on AI in production, evaluation and adoption, also shared on LinkedIn.",
+  "nav_posts": "Posts", "posts_intro": "Notes on AI adoption, evaluation and regulation, also shared on LinkedIn.", "posts_via": "posted by",
   "posts_follow": "Follow me on LinkedIn →", "posts_paper": "Read", "home": "Home",
   "cta_chips": ["AI Strategy &amp; Advisory", "Custom AI Systems", "Speaking &amp; Workshops", "AI Training &amp; Enablement"],
   "cta_body": "I help companies navigate AI strategy and build systems that deliver real value. Whether you need hands-on engineering, executive advisory, or a talk that cuts through the hype, let's talk.",
@@ -213,7 +307,7 @@ CONTENT = {
              "Musicienne de formation classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
              "Plus de 50 pays visités, et ce n'est pas fini."],
   "cta_title": "Discutons", "marquee": "Organisations",
-  "nav_posts": "Posts", "posts_intro": "Notes sur l'IA en production, l'évaluation et l'adoption, également publiées sur LinkedIn (en anglais).",
+  "nav_posts": "Posts", "posts_intro": "Notes sur l'adoption de l'IA, son évaluation et sa réglementation, également publiées sur LinkedIn (la plupart en anglais).", "posts_via": "publié par",
   "posts_follow": "Me suivre sur LinkedIn →", "posts_paper": "Lire", "home": "Accueil",
   "cta_chips": ["Stratégie &amp; conseil IA", "Systèmes d'IA sur mesure", "Conférences &amp; ateliers", "Formation &amp; acculturation IA"],
   "cta_body": "J'aide les entreprises à définir leur stratégie IA et à construire des systèmes qui apportent une vraie valeur. Que vous ayez besoin d'ingénierie, de conseil auprès de la direction ou d'une intervention qui va au-delà des effets d'annonce, parlons-en.",
@@ -567,10 +661,13 @@ def render_posts(lang):
         y, mo, d = p["date"]
         date_txt = f"{d} {MONTHS[lang][mo - 1]} {y}"
         links = "".join(f'<a href="{u}" {EXT}>{t} →</a>' for t, u in p["links"])
+        title = f'<h2>{p["title"]}</h2>' if p.get("title") else '<div class="post-sep"></div>'
+        via = f' · {c["posts_via"]} {p["via"]}' if p.get("via") else ""
+        plang = f' lang="{p["lang"]}"' if p.get("lang") else ""
         items += f'''
-      <article class="post">
-        <time datetime="{y:04d}-{mo:02d}-{d:02d}">{date_txt}</time>
-        <h2>{p["title"]}</h2>
+      <article class="post"{plang}>
+        <time datetime="{y:04d}-{mo:02d}-{d:02d}">{date_txt}{via}</time>
+        {title}
         <div class="post-body">{render_blocks(p["body"])}</div>
         <p class="links">{links}</p>
       </article>'''

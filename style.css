@@ -211,6 +211,8 @@ strong { font-weight: 600; color: var(--ink); }
 .post time { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .post h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3.6vw, 36px); line-height: 1.15; margin: 10px 0 18px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
 .post-body { color: var(--ink2); font-size: 16px; }
+.post-sep { height: 1px; background: var(--rule); margin: 14px 0 18px; }
+.post-body small { font-size: 13.5px; color: var(--muted); }
 .post-body > * + * { margin-top: 14px; }
 .post-body ul, .post-body ol { padding-left: 22px; }
 .post-body ul { list-style: disc; }
