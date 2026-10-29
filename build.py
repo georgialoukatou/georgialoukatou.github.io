@@ -17,7 +17,7 @@ LANG_LABEL = {"en": "EN", "fr": "FR"}
 PUBLICATIONS = [
     "<strong>Loukatou, G.</strong>, Stoll, S., Blasi, D., &amp; Cristia, A. (2022). Does morphological complexity affect word segmentation? Evidence from computational modeling. <em>Cognition</em>, 220.",
     "<strong>Loukatou, G.*</strong>, Tan, A.W.M.*, Braginsky, M., Mankewitz, J., &amp; Frank, M.C. (2024). Predicting ages of acquisition for children's early vocabulary across 27 languages and dialects. <em>CogSci 2024</em>.",
-    "<strong>Loukatou, G.</strong>, Kachergis, G., &amp; Frank, M.C. (2022). Identifying the distributional sources of children's early vocabulary. <em>CogSci 2022</em>.",
+    "<strong>Loukatou, G.*</strong>, Kachergis, G.*, &amp; Frank, M.C. (2022). Identifying the distributional sources of children's early vocabulary. <em>CogSci 2022</em>.",
     "<strong>Loukatou, G.</strong>, Stoll, S., Blasi, D., &amp; Cristia, A. (2019). Is Word Segmentation Child's Play in All Languages? <em>ACL 2019</em>, Florence.",
 ]
 
@@ -226,9 +226,9 @@ CONTENT = {
     ("ens.png", "Workshop Organizer &amp; Research Supervisor", "ENS Paris · 2017 – 2020",
      "Organized workshops on open-source and programming best practices and on imposter syndrome, and supervised 7 research interns."),
   ],
-  "scholar": "Full list on Google Scholar →",
-  "beyond": ["Trained in theater and critical thinking for science communication. Communicating AI well matters as much as building it.",
-             "Classically trained musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
+  "scholar": "Full list on Google Scholar →", "equal": "* Equal contribution",
+  "beyond": ["Background in theater and critical thinking for science communication. Communicating AI well matters as much as building it.",
+             "Classical musician, with degrees in Piano Performance and in Harmony, Theory &amp; Composition.",
              "Traveled to 50+ countries, and counting."],
   "cta_title": "Chat with me", "marquee": "Organizations",
   "nav_posts": "Posts", "posts_intro": "Notes on AI adoption, evaluation and regulation, also shared on LinkedIn.", "posts_via": "posted by", "posts_all": "All posts", "posts_more": "More on LinkedIn",
@@ -302,9 +302,9 @@ CONTENT = {
     ("ens.png", "Organisatrice d'ateliers &amp; encadrante de recherche", "ENS Paris · 2017 – 2020",
      "Organisation d'ateliers sur l'open source, les bonnes pratiques de programmation et le syndrome de l'imposteur, et encadrement de 7 stagiaires de recherche."),
   ],
-  "scholar": "Liste complète sur Google Scholar →",
-  "beyond": ["Formée au théâtre et à l'esprit critique pour la médiation scientifique. Bien expliquer l'IA compte autant que la construire.",
-             "Musicienne de formation classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
+  "scholar": "Liste complète sur Google Scholar →", "equal": "* Contribution égale",
+  "beyond": ["Pratique du théâtre et de l'esprit critique pour la médiation scientifique. Bien expliquer l'IA compte autant que la construire.",
+             "Musicienne classique, diplômée en interprétation au piano ainsi qu'en harmonie, théorie et composition.",
              "Plus de 50 pays visités, et ce n'est pas fini."],
   "cta_title": "Discutons", "marquee": "Organisations",
   "nav_posts": "Posts", "posts_intro": "Notes sur l'adoption de l'IA, son évaluation et sa réglementation, également publiées sur LinkedIn (la plupart en anglais).", "posts_via": "publié par", "posts_all": "Tous les posts", "posts_more": "Plus de posts sur LinkedIn",
@@ -637,7 +637,7 @@ def render_home(lang):
     {block(1, h["teaching"], f'<div class="cards three">{teach}</div>')}
   </div>
   <div class="panel" role="tabpanel" id="panel-publications" aria-labelledby="tab-publications">
-    {block(1, h["pubs"], f'<ol class="pubs">{pubs}</ol><p class="links"><a href="{SCHOLAR}" {EXT}>{c["scholar"]}</a></p>')}
+    {block(1, h["pubs"], f'<ol class="pubs">{pubs}</ol><p class="pub-note">{c["equal"]}</p><p class="links"><a href="{SCHOLAR}" {EXT}>{c["scholar"]}</a></p>')}
   </div>
   <div class="panel" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
     {block(1, h["beyond"], f'<div class="beyond">{beyond}</div>')}

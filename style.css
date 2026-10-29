@@ -175,6 +175,8 @@ strong { font-weight: 600; color: var(--ink); }
 .pubs li { counter-increment: pub; display: grid; grid-template-columns: 44px 1fr; padding: 18px 0; border-bottom: 1px solid var(--rule); color: var(--ink2); font-size: 15.5px; }
 .pubs li::before { content: counter(pub, decimal-leading-zero); font-weight: 700; font-size: 13px; color: var(--muted); padding-top: 3px; }
 
+.pub-note { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
 /* About */
 .beyond { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .beyond p { color: var(--ink2); background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--ink); border-radius: 0 0 12px 12px; padding: 22px; font-size: 15.5px; }
