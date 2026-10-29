@@ -90,8 +90,8 @@ h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(46px, 7.5vw, 
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 56px 0 0; border-top: 2px solid var(--strong-rule); }
 .stats > div { padding: 22px 24px 0 0; }
 .stats > div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
-.stats dt { font-family: var(--serif); font-size: 44px; line-height: 1; }
-.stats dd { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+.stats dt { font-family: var(--serif); font-size: 44px; line-height: 1; letter-spacing: .05em; }
+.stats dd { margin: 8px 0 0; font-size: 14px; color: var(--muted); letter-spacing: .06em; }
 
 /* Tabs */
 .tabs-area { background: var(--band); border-top: 1px solid var(--rule); }
@@ -323,8 +323,8 @@ strong { font-weight: 600; color: var(--ink); }
   .stats { grid-template-columns: 1fr 1fr 1fr; }
   .stats > div { padding-right: 10px; }
   .stats > div + div { padding-left: 12px; }
-  .stats dt { font-size: 32px; }
-  .stats dd { font-size: 12.5px; }
+  .stats dt { font-size: 29px; letter-spacing: .03em; }
+  .stats dd { font-size: 12.5px; letter-spacing: .04em; }
   .cards.two, .cards.three, .beyond, .edu { grid-template-columns: 1fr; }
   .card-head { grid-template-columns: auto 1fr; }
   .card-head .date { grid-column: 2; margin-top: -10px; }
