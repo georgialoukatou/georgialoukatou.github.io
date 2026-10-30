@@ -340,3 +340,13 @@ strong { font-weight: 600; color: var(--ink); }
 }
 
 @media print { .nav, .tabbar-wrap, .cta-section .cta-row { display: none; } }
+
+/* Section titles take the colour of their pill */
+#experience { --c: #1E6B61; }
+#speaking { --c: #2A5E86; }
+#teaching { --c: #34509E; }
+#publications { --c: #4B3FB0; }
+#about { --c: #6A3FA8; }
+.panel .block-title { color: var(--c); border-bottom-color: var(--c); }
+.panel .num { background: none; color: var(--c); }
+@media (prefers-color-scheme: dark) { .panel .block-title, .panel .num { color: color-mix(in srgb, var(--c) 55%, #fff); } }
